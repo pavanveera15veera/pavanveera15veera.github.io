@@ -166,6 +166,9 @@ section{padding-block:40px;border-bottom:1px solid var(--line)}
 .rec-body dd li{margin-bottom:6px}
 .rec-body dd li:last-child{margin-bottom:0}
 .metric{font-family:var(--mono);color:var(--accent);font-size:13.5px;font-variant-numeric:tabular-nums}
+.rec-link{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+.rec-link:hover{border-bottom-color:var(--accent)}
+.rec-link + .rec-link{margin-left:16px}
 .expand-hint{
   grid-column:1/-1;font-family:var(--mono);font-size:10.5px;color:var(--muted);
   letter-spacing:.08em;text-transform:uppercase;margin-top:12px;
@@ -323,8 +326,11 @@ section{padding-block:40px;border-bottom:1px solid var(--line)}
           </dd>
           <dt>Result</dt>
           <dd>Scores span <span class="metric">0.19</span> to <span class="metric">0.88</span> with the drivers visible per zone.</dd>
-          <dt>Code</dt>
-          <dd><a href="https://github.com/pavanveera15veera/FraudLens3D" target="_blank" rel="noopener" style="color:var(--accent)">github.com/pavanveera15veera/FraudLens3D</a></dd>
+          <dt>Links</dt>
+          <dd>
+            <a class="rec-link" href="https://pavanveera15veera.github.io/FraudLens3D/" target="_blank" rel="noopener">Live demo &rarr;</a>
+            <a class="rec-link" href="https://github.com/pavanveera15veera/FraudLens3D" target="_blank" rel="noopener">Source &rarr;</a>
+          </dd>
         </dl>
       </div>
     </details>
