@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pavan Veeramani Veera</title>
+<meta name="description" content="Full-stack and ML engineer. M.S. Computer Science at NYU Tandon, graduating May 2027. Selected work in regulatory AI, risk scoring and geospatial data.">
+<meta property="og:title" content="Pavan Veeramani Veera">
+<meta property="og:description" content="Full-stack and ML engineer. M.S. Computer Science at NYU Tandon, graduating May 2027.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9679;</text></svg>">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<style>
+/* Layout: a single narrow column read as an inspection record; mono rail carries metadata, sans carries prose. */
+:root{
+  --bg:#F5F6F7;
+  --surface:#FFFFFF;
+  --surface-2:#EDEFF1;
+  --fg:#0F151B;
+  --muted:#5B6773;
+  --line:#DCE1E6;
+  --accent:#9A5B00;
+  --accent-bg:rgba(154,91,0,.10);
+  --ok:#2F6B4F;
+  --display:'Archivo',system-ui,-apple-system,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1015;
+    --surface:#111920;
+    --surface-2:#161F28;
+    --fg:#E6ECF2;
+    --muted:#8494A2;
+    --line:#1D2932;
+    --accent:#E9A646;
+    --accent-bg:rgba(233,166,70,.12);
+    --ok:#5FB58C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1015;
+  --surface:#111920;
+  --surface-2:#161F28;
+  --fg:#E6ECF2;
+  --muted:#8494A2;
+  --line:#1D2932;
+  --accent:#E9A646;
+  --accent-bg:rgba(233,166,70,.12);
+  --ok:#5FB58C;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.6;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:860px;
+  margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0;
+}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+
+/* ---------- masthead ---------- */
+.mast{padding-block:56px 36px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--ok);flex:none}
+h1{font-size:clamp(32px,7vw,52px);font-weight:700;line-height:1.05}
+.thesis{
+  font-size:clamp(17px,2.6vw,21px);color:var(--fg);max-width:34em;margin-top:18px;
+  font-weight:400;line-height:1.5;
+}
+.thesis em{font-style:normal;color:var(--accent);font-weight:500}
+.meta-row{
+  display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;
+  font-family:var(--mono);font-size:12.5px;color:var(--muted);
+}
+.meta-row b{color:var(--fg);font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{
+  font-family:var(--mono);font-size:12.5px;text-decoration:none;
+  border:1px solid var(--line);background:var(--surface);color:var(--fg);
+  padding:9px 14px;border-radius:2px;cursor:pointer;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- sections ---------- */
+section{padding-block:40px;border-bottom:1px solid var(--line)}
+.sec-head{
+  display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap;
+}
+.sec-head h2{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-family:var(--mono)}
+.sec-head .count{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.chip{
+  font-family:var(--mono);font-size:11.5px;padding:5px 10px;border-radius:2px;
+  border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;
+  transition:all .15s;
+}
+.chip:hover{color:var(--fg);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- project records ---------- */
+.rec{
+  border:1px solid var(--line);background:var(--surface);border-radius:3px;
+  margin-bottom:10px;overflow:hidden;transition:border-color .18s;
+}
+.rec:hover{border-color:var(--muted)}
+.rec[open]{border-color:var(--accent)}
+.rec summary{
+  list-style:none;cursor:pointer;padding:18px 20px;display:grid;
+  grid-template-columns:1fr auto;gap:6px 16px;align-items:start;
+}
+.rec summary::-webkit-details-marker{display:none}
+.rec summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.rec-title{font-family:var(--display);font-size:17px;font-weight:600;min-width:0;letter-spacing:-.01em}
+.rec-year{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap;padding-top:4px}
+.rec-sub{
+  grid-column:1/-1;font-size:14px;color:var(--muted);min-width:0;margin-top:-2px;
+}
+.stack{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line);padding:3px 7px;border-radius:2px;background:var(--surface-2);
+}
+.rec-body{padding:0 20px 20px;border-top:1px solid var(--line);margin-top:4px}
+.rec-body dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:18px 0 0;align-items:baseline}
+.rec-body dt{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.rec-body dd{margin:0;min-width:0;font-size:14.5px}
+.rec-body dd ul{margin:0;padding-left:18px}
+.rec-body dd li{margin-bottom:6px}
+.rec-body dd li:last-child{margin-bottom:0}
+.metric{font-family:var(--mono);color:var(--accent);font-size:13.5px;font-variant-numeric:tabular-nums}
+.expand-hint{
+  grid-column:1/-1;font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  letter-spacing:.08em;text-transform:uppercase;margin-top:12px;
+}
+.rec[open] .expand-hint{color:var(--accent)}
+
+/* ---------- experience ---------- */
+.job{display:grid;grid-template-columns:1fr;gap:4px;padding-block:16px;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:none;padding-bottom:0}
+.job-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.job-role{font-family:var(--display);font-size:16px;font-weight:600;min-width:0}
+.job-when{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.job-org{font-size:13.5px;color:var(--muted);font-family:var(--mono)}
+.job p{margin:8px 0 0;font-size:14.5px;max-width:62ch}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skill-grp{min-width:0}
+.skill-grp h3{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;font-weight:500;
+}
+.skill-grp p{margin:0;font-size:14.5px;line-height:1.7}
+
+/* ---------- papers ---------- */
+.paper{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:12px;border-bottom:1px solid var(--line)}
+.paper:last-child{border-bottom:none}
+.paper-t{font-size:14.5px;min-width:0;font-weight:500}
+.paper-v{font-size:13px;color:var(--muted);font-family:var(--mono)}
+
+/* ---------- contact ---------- */
+.contact{padding-block:40px 64px;border-bottom:none}
+.addr{
+  font-family:var(--mono);font-size:clamp(14px,3.4vw,19px);
+  background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:14px 16px;display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;margin-top:16px;word-break:break-all;
+}
+.copy{
+  font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);padding:6px 11px;border-radius:2px;
+  cursor:pointer;white-space:nowrap;transition:all .15s;
+}
+.copy:hover{color:var(--accent);border-color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.foot{
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  margin-top:40px;letter-spacing:.06em;
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:520px){
+  .rec summary{padding:16px}
+  .rec-body{padding:0 16px 16px}
+  .rec-body dl{grid-template-columns:1fr;gap:4px 0}
+  .rec-body dt{margin-top:10px}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Open to New Grad Software Engineer roles</span>
+      <span>&middot;</span>
+      <span>New York City</span>
+    </div>
+    <h1>Pavan Veeramani Veera</h1>
+    <p class="thesis">
+      Full-stack and ML engineer. Most of what I build answers the same question:
+      <em>how do you let software decide something, and still prove it was right?</em>
+    </p>
+    <div class="meta-row">
+      <span><b>M.S. Computer Science</b>, NYU Tandon</span>
+      <span>Graduating <b>May 2027</b></span>
+      <span>GPA <b>3.78</b></span>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="https://github.com/pavanveera15veera" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/pavanveera15" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#work">Selected work</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <span class="count" id="count">6 projects</span>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter projects by technology">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="Python">Python</button>
+      <button class="chip" aria-pressed="false" data-f="React">React</button>
+      <button class="chip" aria-pressed="false" data-f="LLM">LLM</button>
+      <button class="chip" aria-pressed="false" data-f="Machine learning">Machine learning</button>
+      <button class="chip" aria-pressed="false" data-f="Full-stack">Full-stack</button>
+    </div>
+
+    <details class="rec" data-tags="Python,LLM,Full-stack">
+      <summary>
+        <span class="rec-title">Maya</span>
+        <span class="rec-year">2026 &middot; Industry assessment</span>
+        <span class="rec-sub">An agent that watches payroll regulation, detects what changed, and refuses to let a language model do the arithmetic.</span>
+        <span class="stack">
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQLite</span>
+          <span class="tag">LLM agents</span><span class="tag">PDF parsing</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Problem</dt>
+          <dd>Payroll rules change by jurisdiction without warning. Someone has to read every new bulletin, work out what moved, and price the impact across a workforce. Missing one is a compliance failure.</dd>
+          <dt>Build</dt>
+          <dd>
+            <ul>
+              <li>An agent fingerprints each policy source by content hash, notices new versions, pulls them, and splits documents into numbered sections carrying jurisdiction and effective date.</li>
+              <li>A language model compares old and new sections and must quote the text it relied on. Code then verifies every quote appears verbatim in the source, recomputes every figure in exact decimal arithmetic, and cross-checks change type against jurisdiction and category.</li>
+              <li>A finding is only marked ready to approve when <span class="metric">8</span> conditions pass. Everything else routes to a human with the reason stated. Decisions are written to SQLite and never edited after the fact.</li>
+              <li>The agent runs on a hard <span class="metric">25-step</span> cap across <span class="metric">10</span> tools, none of which can approve anything.</li>
+            </ul>
+          </dd>
+          <dt>Result</dt>
+          <dd>Matched changes against <span class="metric">80</span> employee records across <span class="metric">3</span> jurisdictions, priced wage increases including overtime and employer tax, and shipped a review dashboard with filters, immutable decision history and CSV export.</dd>
+          <dt>Takeaway</dt>
+          <dd>The division of labour is the whole design. The model reads, the code checks, a person decides.</dd>
+        </dl>
+      </div>
+    </details>
+
+    <details class="rec" data-tags="Python,React,Machine learning,Full-stack">
+      <summary>
+        <span class="rec-title">FraudLens3D</span>
+        <span class="rec-year">2026 &middot; NYU Tandon</span>
+        <span class="rec-sub">Risk scoring for NYC commercial zones, built from twelve civic datasets that nobody reads together.</span>
+        <span class="stack">
+          <span class="tag">React</span><span class="tag">Mapbox GL JS</span><span class="tag">Python</span><span class="tag">pandas</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Problem</dt>
+          <dd>An operator with violations across housing, health inspections and construction looks clean in any single dataset. The pattern only exists in the join, and underwriters do not have the join.</dd>
+          <dt>Build</dt>
+          <dd>
+            <ul>
+              <li>Joined <span class="metric">12</span> NYC Open Data sources covering <span class="metric">29K+</span> violations, inspections, 311 requests and fines into one record per commercial zone.</li>
+              <li>Scored each zone on violation density, variety across domains, and severity, producing a transparent heuristic rather than a black box, so a reviewer can see exactly why a score moved.</li>
+              <li>Built an interactive 3D React map with address search, chain-level risk ranking and portfolio aggregation, aimed at an underwriting workflow rather than a dashboard.</li>
+            </ul>
+          </dd>
+          <dt>Result</dt>
+          <dd>Scores span <span class="metric">0.19</span> to <span class="metric">0.88</span> with the drivers visible per zone.</dd>
+          <dt>Code</dt>
+          <dd><a href="https://github.com/pavanveera15veera/FraudLens3D" target="_blank" rel="noopener" style="color:var(--accent)">github.com/pavanveera15veera/FraudLens3D</a></dd>
+        </dl>
+      </div>
+    </details>
+
+    <details class="rec" data-tags="Python,LLM,Machine learning">
+      <summary>
+        <span class="rec-title">AutoDDG-Geo</span>
+        <span class="rec-year">2026 &middot; NYU Tandon research</span>
+        <span class="rec-sub">Geospatial datasets describe themselves badly, so nobody finds them. A deterministic profiler fixes what the language model gets wrong.</span>
+        <span class="stack">
+          <span class="tag">Python</span><span class="tag">LLMs</span><span class="tag">GeoPandas</span><span class="tag">Shapely</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Problem</dt>
+          <dd>NYC Open Data holds over a thousand datasets with descriptions too vague to search. Handing them to a language model directly produces confident, wrong claims about geometry, which then break everything downstream.</dd>
+          <dt>Build</dt>
+          <dd>
+            <ul>
+              <li>Wrote a rule-based profiler that infers spatial role, geometry type and resolution deterministically across <span class="metric">1,000+</span> datasets. No model involved, so no hallucinated geometry.</li>
+              <li>Fed that structured profile into the language model, which does the part it is actually good at: writing natural language from reliable metadata.</li>
+              <li>Handled the real inputs rather than the clean ones: lat/lon columns, WKT, GeoJSON, geometry stored as strings, missing metadata, and geometries exceeding token limits.</li>
+            </ul>
+          </dd>
+          <dt>Result</dt>
+          <dd>Geo-Faithfulness Score rose from <span class="metric">0.5</span> to <span class="metric">1.0</span> across five benchmark datasets, with search precision, recall and MRR each improving by roughly <span class="metric">3%</span>.</dd>
+        </dl>
+      </div>
+    </details>
+
+    <details class="rec" data-tags="React,Full-stack">
+      <summary>
+        <span class="rec-title">Job Portal</span>
+        <span class="rec-year">2024 &middot; Published at NCCC&rsquo;24</span>
+        <span class="rec-sub">A full-stack recruitment platform, and the project where I learned how authentication actually behaves in a browser.</span>
+        <span class="stack">
+          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span>
+          <span class="tag">MongoDB</span><span class="tag">REST APIs</span><span class="tag">JWT</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Build</dt>
+          <dd>
+            <ul>
+              <li>React and Material UI frontend against an Express REST API, with MongoDB holding users, listings and applications. Both sides of the marketplace: seekers browse, filter and apply; recruiters post roles and move candidates through states.</li>
+              <li>JWT for stateless sessions with bcrypt password hashing, Multer handling resume uploads with file-type validation, NodeMailer for verification, and CORS configured to a single allowed origin.</li>
+            </ul>
+          </dd>
+          <dt>Debugging</dt>
+          <dd>Tokens kept vanishing on refresh. Tracing it through three layers taught me more about browser storage and auth flow than any amount of reading would have.</dd>
+          <dt>Published</dt>
+          <dd>Presented at NCCC&rsquo;24, SRM Institute of Science and Technology.</dd>
+        </dl>
+      </div>
+    </details>
+
+    <details class="rec" data-tags="Python,Machine learning">
+      <summary>
+        <span class="rec-title">Solar Yield Prediction</span>
+        <span class="rec-year">2025</span>
+        <span class="rec-sub">Predicting panel output from weather, and finding out that tuning is not a formality.</span>
+        <span class="stack">
+          <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">pandas</span><span class="tag">Flask</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Build</dt>
+          <dd>Regression over temperature, humidity, irradiance, cloud cover and wind speed. Standard scaling, correlation analysis to confirm irradiance dominated, then Random Forest against Gradient Boosting with grid search and cross-validation.</dd>
+          <dt>Result</dt>
+          <dd>Gradient Boosting won with <span class="metric">R&sup2; 0.86</span> and <span class="metric">MAE 0.29</span> kWh/m&sup2;, served through a small Flask app. Before tuning and scaling the same models scored worse than predicting the mean, which was the actual lesson.</dd>
+        </dl>
+      </div>
+    </details>
+
+    <details class="rec" data-tags="Python,Machine learning">
+      <summary>
+        <span class="rec-title">Rice Leaf Disease Detection</span>
+        <span class="rec-year">2024</span>
+        <span class="rec-sub">Four CNN architectures compared on a dataset too small for any of them.</span>
+        <span class="stack">
+          <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">CNNs</span>
+        </span>
+        <span class="expand-hint">Open record</span>
+      </summary>
+      <div class="rec-body">
+        <dl>
+          <dt>Build</dt>
+          <dd>Benchmarked ResNet, EfficientNet and InceptionV3 with transfer learning and custom augmentation designed around the failure modes of a small agricultural dataset.</dd>
+          <dt>Result</dt>
+          <dd>InceptionV3 reached <span class="metric">91.87%</span> validation accuracy.</dd>
+        </dl>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Experience</h2></div>
+    <div class="job">
+      <div class="job-top">
+        <span class="job-role">Software Engineering Intern (AI/Python)</span>
+        <span class="job-when">Jul 2024 &ndash; Oct 2024</span>
+      </div>
+      <div class="job-org">EMICO Solutions &middot; Chennai, India</div>
+      <p>Built and optimized Python data processing modules inside production pipelines at a consultancy shipping client work across eCommerce, B2B and enterprise. Integrated SHAP and LIME into the backend prediction workflow so client-facing teams could read system output without an engineer in the room, and validated results against requirements before each release.</p>
+    </div>
+    <div class="job">
+      <div class="job-top">
+        <span class="job-role">Co-Founder</span>
+        <span class="job-when">Oct 2022 &ndash; Jun 2025</span>
+      </div>
+      <div class="job-org">PUTACASE &middot; Chennai, India</div>
+      <p>Ran a custom phone accessories business end to end alongside a full course load: sourcing, inventory, fulfillment and support. Grew the customer base 30% by testing ad creative and audience targeting against conversion data.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Stack</h2></div>
+    <div class="skills">
+      <div class="skill-grp"><h3>Languages</h3><p>Python, JavaScript, SQL, Java, C++</p></div>
+      <div class="skill-grp"><h3>Frontend</h3><p>React, HTML, CSS, Mapbox GL JS, Streamlit</p></div>
+      <div class="skill-grp"><h3>Backend &amp; APIs</h3><p>FastAPI, Flask, Node.js, Express, REST</p></div>
+      <div class="skill-grp"><h3>Data stores</h3><p>PostgreSQL, MongoDB, SQLite</p></div>
+      <div class="skill-grp"><h3>Data &amp; ML</h3><p>pandas, NumPy, PySpark, scikit-learn, PyTorch, TensorFlow, SHAP, LIME</p></div>
+      <div class="skill-grp"><h3>Platform</h3><p>Google Cloud (Dataproc), Git, Linux</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Presented</h2></div>
+    <div class="paper">
+      <span class="paper-t">Job Portal Application Using MERN Stack</span>
+      <span class="paper-v">NCCC&rsquo;24 &middot; Nov 2024</span>
+    </div>
+    <div class="paper">
+      <span class="paper-t">Big Data Analytics in Healthcare</span>
+      <span class="paper-v">9th Natl. Conf. on AI Frontiers &middot; Mar 2024</span>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="sec-head"><h2>Get in touch</h2></div>
+    <p style="margin:0;max-width:52ch;color:var(--muted)">
+      Looking for a New Grad Software Engineer role starting mid-2027, on-site in New York.
+      Happy to talk about anything above in more detail.
+    </p>
+    <div class="addr">
+      <span id="email">pavanveeramaniveera@gmail.com</span>
+      <button class="copy" id="copyBtn" type="button">Copy</button>
+    </div>
+    <div class="links" style="margin-top:14px">
+      <a class="btn" href="https://linkedin.com/in/pavanveera15" target="_blank" rel="noopener">linkedin.com/in/pavanveera15</a>
+      <a class="btn" href="https://github.com/pavanveera15veera" target="_blank" rel="noopener">github.com/pavanveera15veera</a>
+    </div>
+    <div class="foot">Brooklyn, New York</div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var recs  = Array.prototype.slice.call(document.querySelectorAll('.rec'));
+  var count = document.getElementById('count');
+
+  function apply(f){
+    var shown = 0;
+    recs.forEach(function(r){
+      var tags = (r.getAttribute('data-tags')||'').split(',');
+      var hit = (f === 'all') || tags.indexOf(f) !== -1;
+      r.hidden = !hit;
+      if(hit) shown++;
+    });
+    count.textContent = shown + (shown === 1 ? ' project' : ' projects');
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
+      apply(c.getAttribute('data-f'));
+    });
+  });
+
+  var btn = document.getElementById('copyBtn');
+  btn.addEventListener('click', function(){
+    var text = document.getElementById('email').textContent.trim();
+    var done = function(){
+      btn.textContent = 'Copied';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 1600);
+    };
+    try{
+      navigator.clipboard.writeText(text).then(done, function(){ select(); });
+    }catch(e){ select(); }
+    function select(){
+      var r = document.createRange();
+      r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection();
+      s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Select & copy';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 2200);
+    }
+  });
+})();
+</script>
+</body>
+</html>
