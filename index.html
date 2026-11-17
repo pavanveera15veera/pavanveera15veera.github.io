@@ -103,6 +103,8 @@ h1{font-size:clamp(32px,7vw,52px);font-weight:700;line-height:1.05}
 }
 .meta-row b{color:var(--fg);font-weight:500}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.mast-inner{display:grid;grid-template-columns:1fr auto;gap:28px 40px;align-items:start}
+.portrait{width:172px;height:auto;display:block;border-radius:4px;border:1px solid var(--line)}
 .btn{
   font-family:var(--mono);font-size:12.5px;text-decoration:none;
   border:1px solid var(--line);background:var(--surface);color:var(--fg);
@@ -221,6 +223,10 @@ section{padding-block:40px;border-bottom:1px solid var(--line)}
 }
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:680px){
+  .mast-inner{grid-template-columns:1fr;gap:22px}
+  .portrait{width:124px;order:-1}
+}
 @media (max-width:520px){
   .rec summary{padding:16px}
   .rec-body{padding:0 16px 16px}
@@ -232,6 +238,8 @@ section{padding-block:40px;border-bottom:1px solid var(--line)}
 <div class="wrap">
 
   <header class="mast">
+    <div class="mast-inner">
+      <div class="mast-text">
     <div class="eyebrow">
       <span class="dot" aria-hidden="true"></span>
       <span>Open to New Grad Software Engineer roles</span>
@@ -253,6 +261,9 @@ section{padding-block:40px;border-bottom:1px solid var(--line)}
       <a class="btn" href="https://github.com/pavanveera15veera" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://linkedin.com/in/pavanveera15" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="#work">Selected work</a>
+    </div>
+    </div>
+      <img class="portrait" src="portrait.jpg" width="440" height="522" alt="Pavan Veeramani Veera" decoding="async">
     </div>
   </header>
 
